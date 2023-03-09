@@ -1,5 +1,6 @@
 # Assignment WT1 - 1DV027 @Linneaus University
-This is an assignment I did in a course in my WebDeveloper studies where I have implemented OAuth in a .NET environment. Earlier in the program I have mainly been using NodeJS and Javascript, so this is one of my first applications using ASP.NET. The assignment description is given below.
+This is an assignment I did in a course in my WebDeveloper studies where I have implemented OAuth in a .NET environment. It is bascially an SSR application that utilize GitLab as OAuth provider. Different routes inside the application gathers data from the logged in user's groups at GitLab, where both REST and GraphQL is used to gather data.
+Earlier in the program I have mainly been using NodeJS and Javascript, so this is one of my first applications I have done using ASP.NET. The assignment description is given below.
 
 Martin
 
