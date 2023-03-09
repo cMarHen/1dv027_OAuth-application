@@ -1,4 +1,9 @@
-# Assignment WT1 - OAuth + Consuming REST and GraphQL APIs
+# Assignment WT1 - 1DV027 @Linneaus University
+This is an assignment I did in a course in my WebDeveloper studies where I have implemented OAuth in a .NET environment. Earlier in the program I have mainly been using NodeJS and Javascript, so this is one of my first applications using ASP.NET. The assignment description is given below.
+
+Martin
+
+## Assignment WT1 - OAuth + Consuming REST and GraphQL APIs
 
 In modern web applications, the ability to delegate access between systems is crucial. One widely used standard for access delegation is OAuth (Open Authorization). Although the OAuth flow may appear complex at first glance, it is important to understand the roles and communication of the different stakeholders (client/consumer/service provider) involved.
 
