@@ -1,0 +1,90 @@
+﻿@using Assignment_wt1.Models.GroupModels
+@using System.Text.Json
+@model CurrentUserModel
+
+<div class="text-center">
+    <h1 class="display-4">Groups</h1>
+
+
+    @if (Model == null)
+    {
+        <p>No groups found.</p>
+    }
+    else
+    {
+        <div class="container">
+            @{
+                int amountOfGroups = 0;
+            }
+            @foreach (var group in Model.Groups)
+            {
+                <div class="group-row">
+                    <div class="group-container">
+                        <a href="@group.WebUrl">
+                            <h2>@group.Name</h2>
+                        </a>
+                        <p>@group.FullPath</p>
+                        @if (group.AvatarUrl != null)
+                        {
+                            <img src="@group.AvatarUrl" alt="Group avatar" class="">
+                        }
+                    </div>
+                    <div class="project-container">
+                        @if (group.Projects.Count == 0)
+                        {
+                            <h3>No projects found in this group.</h3>
+                        }
+                        else
+                        {
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th class="column-action-name">Project name</th>
+                                        <th class="column-action-name">Last activity</th>
+                                        <th class="column-action-name"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @{
+                                        int amountOfProjects = 0;
+                                    }
+                                    @foreach (var project in group.Projects)
+                                    {
+                                        <tr class="project-row">
+                                            <td class="project-name"><a href="@project.WebUrl">@project.Name</a></td>
+                                            <td class="project-activity">@project.LastActivityAt.ToShortDateString()</td>
+                                            <td class="author-username"><img src="@project.Author.AvatarUrl" alt="Author Avatar" /> @project.Author.Username</td>
+                                        </tr>
+
+                                        amountOfProjects++;
+                                    }
+                                </tbody>
+                            </table>
+                            @if (group.ProjectCount > amountOfProjects)
+                            {
+                                <div class="load-more">
+                                    <form method="post" action="/Groups">
+                                        <input type="hidden" name="User" value='@JsonSerializer.Serialize(Model)' />
+                                        <input type="hidden" name="FullPath" value='@group.FullPath' />
+                                        <button type="submit">Load more projects.. (showing @amountOfProjects of @group.ProjectCount)</button>
+                                    </form>
+                                </div>
+                            }
+
+                        }
+                    </div>
+                </div>
+                amountOfGroups++;
+            }
+            @if (Model.GroupMemerships > amountOfGroups)
+            {
+                <div class="load-more">
+                    <form method="post" action="/Groups">
+                        <input type="hidden" name="User" value='@JsonSerializer.Serialize(Model)' />
+                        <button type="submit">Load more groups.. (showing @amountOfGroups of @Model.GroupMemerships)</button>
+                    </form>
+                </div>
+            }
+        </div>
+    }
+</div>

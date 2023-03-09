@@ -1,0 +1,9 @@
+﻿.text-center {
+    display: block;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+.text-left {
+    text-align: left;
+}

@@ -1,0 +1,58 @@
+﻿@using Assignment_wt1.Models
+@model List<GitlabActivities>
+
+
+<div class="text-center">
+    <h1 class="display-4">Activities</h1>
+    <p>Here you can list your latest GitLab activities! Enter the amount of activities you want to show.</p>
+    <form method="post" action="/activities">
+        <label for="count">Count:</label>
+        <input type="text" name="count" id="count" value="101" />
+        <button type="submit">Show</button>
+    </form>
+
+    @if (Model == null)
+    {
+        <p>No activities to display.</p>
+    }
+    else
+    {
+        <table class="table table-striped">
+            <thead class="element">
+                <tr>
+                    <th class="column-action-name">
+                        <h3>Action Name</h3>
+                    </th>
+                    <th class="column-created-at">
+                        <h3>Created At</h3>
+                    </th>
+                    <th class="column-target-title">
+                        <h3>Target Title</h3>
+                    </th>
+                    <th class="column-target-type">
+                        <h3>Target Type</h3>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var activity in Model)
+                {
+                    <tr class="element">
+                        <td class="column-action-name">
+                            <p>@activity.action_name</p>
+                        </td>
+                        <td class="column-created-at">
+                            <p>@activity.created_at</p>
+                        </td>
+                        <td class="column-target-title">
+                            <p>@activity.target_title</p>
+                        </td>
+                        <td class="column-target-type">
+                            <p>@activity.target_type</p>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+</div>

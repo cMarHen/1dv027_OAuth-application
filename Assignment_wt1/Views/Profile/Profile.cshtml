@@ -1,0 +1,35 @@
+﻿@using Assignment_wt1.Models
+@model Models.GitlabProfile
+
+<div class="text-center">
+    <h1 class="display-4">You are logged in!</h1>
+    <h4>Welcome @Model.name!</h4>
+
+    <div class="profile-list">
+        <ul>
+            <li>
+                <img src="@Model.avatar_url" alt="avatar" height="100" width="100" />
+            </li>
+            <li>
+                <h4>GitLab ID</h4>
+                <p>@Model.id</p>
+            </li>
+            <li>
+                <h4>Email</h4>
+                <p>@Model.email</p>
+            </li>
+            <li>
+                <h4>Name</h4>
+                <p>@Model.name</p>
+            </li>
+            <li>
+                <h4>Username</h4>
+                <p>@Model.username</p>
+            </li>
+            <li>
+                <h4>Last activity</h4>
+                <p>@Model.last_activity_on</p>
+            </li>
+        </ul>
+    </div>
+</div>

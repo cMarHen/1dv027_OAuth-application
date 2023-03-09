@@ -1,0 +1,98 @@
+﻿.text-center {
+    display: block;
+}
+
+.container {
+    width: 80vw;
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+.container p {
+    margin: 0;
+}
+
+button, input[type=submit] {
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: #111;
+    color: #fff;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 300ms ease;
+}
+
+    button:hover, input[type=submit]:hover {
+        background-color: #000;
+    }
+
+
+.group-row {
+    margin: 20px 0;
+    padding: 20px;
+    border: 1px solid midnightblue;
+    border-radius: 5px;
+}
+
+.group-container {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-around;
+    padding-left: 80px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid gray;
+}
+
+.group-container > a > * {
+    color: midnightblue;
+    font-size: 1.6rem;
+}
+
+.project-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100px;
+}
+
+.table-striped {
+    border-collapse: collapse;
+    width: 90%;
+    background-color: #fff;
+    border-radius: 4px;
+    margin-top: 20px;
+}
+
+    .table-striped td, .table-striped th {
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 10px;
+    }
+
+    .table-striped tr:nth-child(even) {
+        background-color: #f2f2f2;
+        border-radius: 4px;
+    }
+
+    .table-striped tr:hover {
+        background-color: #dceae8;
+        border-radius: 4px;
+    }
+
+    .table-striped th {
+        padding: 15px;
+        text-align: left;
+        background-color: #111;
+        border-radius: 4px;
+        color: #fff;
+    }
+
+.author-username > img {
+    height: 15px;
+} 
+
+
+
